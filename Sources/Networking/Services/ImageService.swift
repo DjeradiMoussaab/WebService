@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 @available(iOS 15.0.0, *)
-struct ImageService {
+public struct ImageService {
     
     private let api: API
     
@@ -17,7 +17,7 @@ struct ImageService {
         self.api = api
     }
     
-    func perform(from url: URL) async throws -> UIImage {
+    public func perform(from url: URL) async throws -> UIImage {
         let data = try await api.makeRequest(from: url)
         guard let image = UIImage(data: data) else { throw RequestErrorType.DecodingError }
         return image

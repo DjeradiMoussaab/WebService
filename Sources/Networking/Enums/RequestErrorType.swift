@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum RequestErrorType : Error {
+public enum RequestErrorType : Error {
     case DecodingError
     case invalideURL
     case invalideResponse

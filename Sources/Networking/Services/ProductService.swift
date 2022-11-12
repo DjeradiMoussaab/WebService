@@ -8,7 +8,7 @@
 import Foundation
 
 @available(iOS 15.0.0, *)
-struct ProductService: APIService {
+public struct ProductService: APIService {
     
     private let api: API
     
@@ -16,7 +16,7 @@ struct ProductService: APIService {
         self.api = api
     }
     /// func that serves the api call, returning a decoded Data with generic type T
-    func perform<T:Decodable>(_ endpoint: Endpoint) async throws -> T {
+    public func perform<T:Decodable>(_ endpoint: Endpoint) async throws -> T {
         let jsonDecoder = JSONDecoderHelper()
         let requestURL = try endpoint.generateRequestURL()
         let response = try await api.makeRequest(requestURL)
