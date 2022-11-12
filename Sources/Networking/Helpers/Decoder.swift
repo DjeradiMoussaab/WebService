@@ -5,7 +5,7 @@
 //  Created by Moussaab Djeradi on 20/10/2022.
 //
 
-import UIKit
+import Foundation
 
 protocol Decoder {
     func decode<T: Decodable>(_ data: Data) throws -> T

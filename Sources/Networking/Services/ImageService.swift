@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 15.0.0, *)
 struct ImageService {
     
     private let api: API

@@ -14,4 +14,9 @@ enum APIConstants {
 
 extension APIConstants {
     static let accessToken = ""
+    
+}
+
+extension APIConstants {
+    static let productsPath = "/items.json"
 }

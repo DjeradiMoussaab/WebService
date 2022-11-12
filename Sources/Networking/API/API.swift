@@ -8,9 +8,11 @@
 import Foundation
 
 
+@available(iOS 13.0.0, *)
 protocol APIProtocol {
     func makeRequest(_ requestURL: URLRequest) async throws -> Data
 }
+@available(iOS 15.0.0, *)
 
 final class API: APIProtocol {
     
