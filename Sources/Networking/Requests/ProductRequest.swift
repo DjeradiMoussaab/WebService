@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum ProductEndpoint: Endpoint {
+public enum ProductEndpoint: Endpoint {
     case getProductList
 }
 
-extension ProductEndpoint {
+public extension ProductEndpoint {
     var httpMethod: RequestType {
         switch self {
         case .getProductList:
