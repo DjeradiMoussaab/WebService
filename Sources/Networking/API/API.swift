@@ -14,11 +14,14 @@ protocol APIProtocol {
 }
 @available(iOS 15.0.0, *)
 
-final class API: APIProtocol {
+public final class API: APIProtocol {
     
     private let cachedImages = NSCache<NSString, NSData>()
+    public init() {
+        
+    }
 
-    func makeRequest(_ requestURL: URLRequest) async throws -> Data {
+    public func makeRequest(_ requestURL: URLRequest) async throws -> Data {
         let (data, response) = try await URLSession.shared.data(for: requestURL)
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {
@@ -27,7 +30,7 @@ final class API: APIProtocol {
         return data
     }
     
-    func makeRequest(from url: URL) async throws -> Data {
+    public func makeRequest(from url: URL) async throws -> Data {
         if let imageData = cachedImages.object(forKey: url.absoluteString as NSString) {
             return imageData as Data
         }

@@ -9,6 +9,6 @@ import Foundation
 
 
 @available(iOS 13.0.0, *)
-protocol APIService {
+public protocol APIService {
     func perform<T:Decodable>(_ endpoint: Endpoint) async throws -> T
 }
